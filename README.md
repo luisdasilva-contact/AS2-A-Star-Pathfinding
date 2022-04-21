@@ -1,2 +1,13 @@
 # AS2-A-Star-Pathfinding
 An AS2 library for node-based pathfinding, utilizing A* Pathfinding first written in AS3 by Greg MacWilliam.
+
+# More About Greg MacWilliam's AS3 A* Pathfinding Library
+Before going into details, I want to thank Greg MacWilliam of Lassie Games for his work in building an AS3 library for node-based pathfinding, [available here](https://lassieadventurestudio.wordpress.com/2008/12/09/a-star-pathfinding/). The code here is simply a backport of his AS3 code, with a few minor changes detailed in the sections below. 
+
+# FAQ
+### AS2? In 2022? But why?
+In 2022, Newgrounds hosted their second annual Flash Forward Jam, a game jam inviting users to build a game in Flash, playable through the [Ruffle Flash emulator](https://ruffle.rs/). At this point in time, Ruffle is only compatible with AS2. My game for the jam revolves around using Voronoi tesselation as a map for entities to traverse, with node-based pathfinding being a crucial component. While I wasn't able to finish the game in time, I intend to still finish it, and wanted to make all my code available a little bit at a time. 
+### What are the key differences between the AS3 and AS2 versions?
+My biggest focus on this project was purely backporting the code from AS3 to AS2, leaving the way it was originally written largely intact. That said, the biggest change is the shift from using XML for storing node data to AS2 objects. These changes were made for 2 major reasons: flexibility and AS2's lack of built-in functionality for XML reading and writing. Regarding the former, as my project would frequently be reading and updating values related to pathfinding, it made more sense to keep everything "in-house", and avoid reading XML files. Additionally, AS3 provides many tools out of the box for reading and writing XML, whereas AS2's functionality in this regard is moreso a series of workarounds than proper support.
+### How would I go about using this in my own projects?
+First off, I'd take a few minutes to seriously consider whether AS2 is worth sticking with. Nobody's stopping you (especially if your heart is set on Flash, and you want to ensure your work is compatible with the Ruffle player), but unless you're part of that very small number of folks making games for these Ruffle-focused game jams, I'd check out newer tools, like Unity or Unreal. That said, if you truly have a passion for emulators of platforms old enough to serve in the military, check out the example .fla! The easiest way to inspect it would be to download the whole folder in this repository at once; that way, the example .fla can access the files within the pathfinding folder.
